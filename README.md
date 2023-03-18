@@ -89,3 +89,23 @@ docker push xxxxxxxxx.dkr.ecr.us-east-1.amazonaws.com/test-ecs:2
 9 - Actualizar la tarea en ECS
 NOTA: agregar nuevo URI de la nueva versión de la imagen de Docker
 ![img_11.png](docs%2Fimg_11.png)
+
+## 🚀 [CURSO AWS] - Tutorial AWS ECS 🐳 Docker en la nube - Parte 2
+NOTA:
+Vamos a crear servicios que **AUTOESCLANE** en AWS ECS
+CLuster: es donde reside nuestro servicio
+Repository: es donde se encuentra la imagen de Docker
+Task definition: es donde se encuentra la configuración de nuestro servicio
+
+Lo que hice:
+Push de la imagen de Docker a AWS ECR
+Crear nueva tarea definición en ECS
+Crear nuevo servicio en ECS
+
+1 - Creando el servicio en ECS con load balancer (ALB)
+NOTA:
+Creamos 2 replicas (Desired tasks)
+Load balancer: Application Load Balancer
+    Port mapping: 80:80 (hacerle saber al ALB como conectrase a nuestro contenedor)
+Health check path: / (ruta para hacer el health check, o sea, para saber si el contenedor está vivo)
+Health check grace period: 30 (tiempo que va a esperar el ALB para hacer el health check)
