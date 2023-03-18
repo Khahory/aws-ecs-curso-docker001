@@ -6,4 +6,5 @@
 FROM node:16-alpine
 WORKDIR /opt
 COPY index.js .
+EXPOSE 8001
 CMD ["node", "index.js"]

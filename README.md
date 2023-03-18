@@ -109,3 +109,17 @@ Load balancer: Application Load Balancer
     Port mapping: 80:80 (hacerle saber al ALB como conectrase a nuestro contenedor)
 Health check path: / (ruta para hacer el health check, o sea, para saber si el contenedor está vivo)
 Health check grace period: 30 (tiempo que va a esperar el ALB para hacer el health check)
+
+2 - Crear los security groups para el ALB y el servicio
+    security groups para el servicio: todo lo que venga por el ALB, podra acceder al servicio
+    ![img_13.png](docs%2Fimg_13.png)
+
+    security groups para el ALB: todo lo que venga por el internet, podra acceder al ALB
+    ![img_12.png](docs%2Fimg_12.png)
+
+3 - Crear un nuevo servicio en ECS (no podemos actualizar el servicio anterior, porque no podemos cambiar 
+el tipo de load balancer)
+NOTA:
+Todo igual, 2 replica y eso, pero ahora usamos nuestro nuevo security group para el servicio y el ALB
+![img_14.png](docs%2Fimg_14.png)
+![img_15.png](docs%2Fimg_15.png)
