@@ -118,8 +118,9 @@ Health check grace period: 30 (tiempo que va a esperar el ALB para hacer el heal
     ![img_12.png](docs%2Fimg_12.png)
 
 3 - Crear un nuevo servicio en ECS (no podemos actualizar el servicio anterior, porque no podemos cambiar 
-el tipo de load balancer)
+el SG de la tarea definición)
 NOTA:
 Todo igual, 2 replica y eso, pero ahora usamos nuestro nuevo security group para el servicio y el ALB
 ![img_14.png](docs%2Fimg_14.png)
 ![img_15.png](docs%2Fimg_15.png)
+Podemos cambiar el security group del ALB en EC2->loadbalancer, pero no podemos cambiar el security group de la tarea definición
